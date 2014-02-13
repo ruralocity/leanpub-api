@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Leanpub::VERSION
   spec.authors       = ["Aaron Sumner"]
   spec.email         = ["asumner@mac.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{A simple Ruby wrapper for the Leanpub API.}
+  spec.summary       = %q{A simple Ruby wrapper for the Leanpub API. Not affiliated with Leanpub or Ruboss Technology Corporation.}
+  spec.homepage      = "https://leanpub.com/ruralocity/leanpub"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
