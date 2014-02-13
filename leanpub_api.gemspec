@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'leanpub/version'
+require 'leanpub_api/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "leanpub"
-  spec.version       = Leanpub::VERSION
+  spec.name          = "leanpub_api"
+  spec.version       = LeanpubAPI::VERSION
   spec.authors       = ["Aaron Sumner"]
   spec.email         = ["asumner@mac.com"]
   spec.description   = %q{A simple Ruby wrapper for the Leanpub API.}

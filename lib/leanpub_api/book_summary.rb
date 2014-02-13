@@ -1,4 +1,4 @@
-module Leanpub
+module LeanpubAPI
   class BookSummary
     include HTTParty
     base_uri 'https://leanpub.com'

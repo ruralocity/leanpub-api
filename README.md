@@ -17,7 +17,7 @@ This library has been tested against the following Ruby versions:
 
 Add this line to your application's Gemfile:
 
-    gem 'leanpub'
+    gem 'leanpub_api'
 
 And then execute:
 
@@ -25,7 +25,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install leanpub
+    $ gem install leanpub_api
 
 ## Usage
 
@@ -35,9 +35,9 @@ by [accessing your Leanpub account](https://leanpub.com/dashboard).
 The gem currently supports the Leanpub API's book summary functions.
 
 ```ruby
-require 'leanpub'
+require 'leanpub_api_'
 
-book = Leanpub::BookSummary.new('<book-slug>', '<api-key>')
+book = LeanpubAPI::BookSummary.new('<book-slug>', '<api-key>')
 
 puts book.title
 puts book.subtitle

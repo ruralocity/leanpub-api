@@ -1,4 +1,4 @@
-require_relative '../lib/leanpub'
+require_relative '../lib/leanpub_api'
 
 require 'minitest/autorun'
 require 'webmock/minitest'

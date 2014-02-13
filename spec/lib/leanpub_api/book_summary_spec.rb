@@ -1,18 +1,18 @@
 require_relative '../../spec_helper'
 
-describe Leanpub::BookSummary do
+describe LeanpubAPI::BookSummary do
   describe "default attributes" do
     it "include HTTParty methods" do
-      Leanpub::BookSummary.must_include HTTParty
+      LeanpubAPI::BookSummary.must_include HTTParty
     end
 
     it "have the base URL set to the Leanpub API endpoint" do
-      Leanpub::BookSummary.base_uri.must_equal 'https://leanpub.com'
+      LeanpubAPI::BookSummary.base_uri.must_equal 'https://leanpub.com'
     end
   end
 
   describe "GET book info" do
-    let(:summary) { Leanpub::BookSummary.new(book_slug, api_key) }
+    let(:summary) { LeanpubAPI::BookSummary.new(book_slug, api_key) }
 
     before :each do
       VCR.insert_cassette 'book_summary', record: :new_episodes
