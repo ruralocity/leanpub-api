@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["asumner@mac.com"]
   spec.description   = %q{A simple Ruby wrapper for the Leanpub API.}
   spec.summary       = %q{A simple Ruby wrapper for the Leanpub API. Not affiliated with Leanpub or Ruboss Technology Corporation.}
-  spec.homepage      = "https://leanpub.com/ruralocity/leanpub-api"
+  spec.homepage      = "https://github.com/ruralocity/leanpub-api"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
