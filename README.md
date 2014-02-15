@@ -1,6 +1,6 @@
 # Leanpub API wrapper for Ruby
 
-A simple Ruby wrapper for the [Leanpub API](https://leanpub.com/help/api). Currently supports the API's book summary functions, with aspirations to do
+A simple Ruby wrapper for the [Leanpub API](https://leanpub.com/help/api). Currently supports the API's book and sales summary functions, with aspirations to do
 more.
 
 **Disclaimer:** Leanpub is a service of Ruboss Technology Corporation, a
@@ -35,7 +35,7 @@ by [accessing your Leanpub account](https://leanpub.com/dashboard).
 The gem currently supports the Leanpub API's book summary functions.
 
 ```ruby
-require 'leanpub_api_'
+require 'leanpub_api'
 
 book = LeanpubAPI::BookSummary.new('<book-slug>', '<api-key>')
 
@@ -52,6 +52,26 @@ puts book.total_revenue
 puts book.possible_reader_count
 ```
 
+You can also get the sales summary for a Leanpub book.
+
+```ruby
+require 'leanpub_api'
+
+sales = LeanpubAPI::SalesSummary.new('<book-slug>', '<api-key>')
+
+puts sales.book
+puts sales.url
+puts sales.total_author_royalties
+puts sales.total_book_royalties
+puts sales.num_happy_readers
+puts sales.num_happy_paid_purchases
+puts sales.num_refunded_purchases
+puts sales.unpaid_royalties
+puts sales.royalties_currently_due
+puts sales.royalties_due_on_first_of_next_month
+puts sales.paid_royalties
+```
+
 ## Development
 
 Tests expect a `.env` file at the project's root, with the following
@@ -64,14 +84,13 @@ environment variables:
 
 Add wrappers for other API functionality:
 
-- Sales summary
 - All sales data
 - Preview functions
 - Publish functions
 - Preview/publish job status
 - Coupon management
 
-Improve configuration
+Test against other Rubies
 
 ## Contributing
 

@@ -1,11 +1,11 @@
 require_relative '../../spec_helper'
 
-describe LeanpubAPI::BookSummary do
-  describe "GET book info" do
-    let(:summary) { LeanpubAPI::BookSummary.new(book_slug, api_key) }
+describe LeanpubAPI::SalesSummary do
+  describe "GET sales summary info" do
+    let(:summary) { LeanpubAPI::SalesSummary.new(book_slug, api_key) }
 
     before :each do
-      VCR.insert_cassette 'book_summary', record: :new_episodes
+      VCR.insert_cassette 'sales_summary', record: :new_episodes
     end
 
     after :each do
@@ -21,13 +21,17 @@ describe LeanpubAPI::BookSummary do
     end
 
     it "performs the request and gets the data" do
-      summary.info["author_string"].must_equal "Aaron Sumner"
-      summary.info["title"].must_equal "Everyday Rails Testing with RSpec"
-      summary.info["subtitle"].must_equal "A practical approach to test-driven development"
-      summary.info["total_copies_sold"].must_equal 3513
-      summary.info["total_revenue"].must_equal "12345.67"
-      summary.info["minimum_price"].must_equal "14.0"
-      summary.info["suggested_price"].must_equal "19.0"
+      summary.info["book"].must_equal "everydayrailsrspec"
+      summary.info["url"].must_equal "https://leanpub.com/everydayrailsrspec"
+      summary.info["total_author_royalties"].must_equal "23456.78"
+      summary.info["total_book_royalties"].must_equal "3456.78"
+      summary.info["num_happy_readers"].must_equal 3534
+      summary.info["num_happy_paid_purchases"].must_equal 3522
+      summary.info["num_refunded_purchases"].must_equal 12
+      summary.info["unpaid_royalties"].must_equal "1208.75"
+      summary.info["royalties_currently_due"].must_equal "0.0"
+      summary.info["royalties_due_on_first_of_next_month"].must_equal "1208.75"
+      summary.info["paid_royalties"].must_equal "12345.67"
     end
 
     describe "dynamic attributes" do
@@ -36,7 +40,7 @@ describe LeanpubAPI::BookSummary do
       end
 
       it "returns an attribute if present in the info" do
-        summary.title.must_equal "Everyday Rails Testing with RSpec"
+        summary.num_happy_readers.must_equal 3534
       end
 
       it "raises method missing if an attribute is not present in the info" do
