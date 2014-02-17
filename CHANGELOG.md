@@ -4,6 +4,7 @@
 
 - Support for Leanpub book sales summary
 - Refactor HTTP connection stuff to base class
+- Remove warnings about pessimistic dependencies
 
 ## 0.0.3
 
