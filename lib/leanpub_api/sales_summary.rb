@@ -1,3 +1,5 @@
+require 'leanpub_api/base'
+
 module LeanpubAPI
   class SalesSummary < LeanpubAPI::Base
     private
