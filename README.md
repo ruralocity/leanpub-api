@@ -1,5 +1,7 @@
 # Leanpub API wrapper for Ruby
 
+[![Build Status](https://travis-ci.org/ruralocity/leanpub-api.png?branch=set-up-travis-ci)](https://travis-ci.org/ruralocity/leanpub-api)
+
 A simple Ruby wrapper for the [Leanpub API](https://leanpub.com/help/api). Currently supports the API's book and sales summary functions, with aspirations to do
 more.
 
@@ -11,7 +13,9 @@ using their service, but am otherwise not affiliated with them in any way.
 
 This library has been tested against the following Ruby versions:
 
+- 2.1.0
 - 2.0.0
+- 1.9.3
 
 ## Installation
 
